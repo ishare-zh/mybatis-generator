@@ -16,7 +16,6 @@
 package org.mybatis.generator.codegen.mybatis3.xmlmapper.elements;
 
 import org.mybatis.generator.api.IntrospectedColumn;
-import org.mybatis.generator.api.dom.OutputUtilities;
 import org.mybatis.generator.api.dom.java.FullyQualifiedJavaType;
 import org.mybatis.generator.api.dom.xml.Attribute;
 import org.mybatis.generator.api.dom.xml.TextElement;
@@ -142,7 +141,6 @@ public class InsertSelectiveElementGenerator extends
             valuesNotNullElement.addElement(new TextElement(sb.toString()));
             valuesTrimElement.addElement(valuesNotNullElement);
         }
-        OutputUtilities.newLine(sb);
 
         if (context.getPlugins().sqlMapInsertSelectiveElementGenerated(
                 answer, introspectedTable)) {

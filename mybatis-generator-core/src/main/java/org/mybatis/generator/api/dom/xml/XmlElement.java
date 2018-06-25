@@ -154,6 +154,9 @@ public class XmlElement extends Element {
         } else {
             sb.append(" />"); //$NON-NLS-1$
         }
+        if (indentLevel == 1) {
+            OutputUtilities.newLine(sb);
+        }
 
         return sb.toString();
     }

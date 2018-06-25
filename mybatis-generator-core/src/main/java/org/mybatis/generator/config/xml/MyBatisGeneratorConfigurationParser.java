@@ -225,6 +225,8 @@ public class MyBatisGeneratorConfigurationParser {
         String domainObjectName = attributes.getProperty("domainObjectName"); //$NON-NLS-1$
         String alias = attributes.getProperty("alias"); //$NON-NLS-1$
         String enableInsert = attributes.getProperty("enableInsert"); //$NON-NLS-1$
+        String enableInsertSeletive = attributes.getProperty("enableInsertSelective"); //$NON-NLS-1$
+        String enableUpdate = attributes.getProperty("enableUpdate"); //$NON-NLS-1$
         String enableSelectByPrimaryKey = attributes
                 .getProperty("enableSelectByPrimaryKey"); //$NON-NLS-1$
         String enableSelectByExample = attributes
@@ -273,6 +275,10 @@ public class MyBatisGeneratorConfigurationParser {
             tc.setInsertStatementEnabled(isTrue(enableInsert));
         }
 
+        if (stringHasValue(enableInsertSeletive)) {
+            tc.setInsertStatementEnabled(isTrue(enableInsertSeletive));
+        }
+
         if (stringHasValue(enableSelectByPrimaryKey)) {
             tc.setSelectByPrimaryKeyStatementEnabled(
                     isTrue(enableSelectByPrimaryKey));
@@ -281,6 +287,11 @@ public class MyBatisGeneratorConfigurationParser {
         if (stringHasValue(enableSelectByExample)) {
             tc.setSelectByExampleStatementEnabled(
                     isTrue(enableSelectByExample));
+        }
+
+        if (stringHasValue(enableUpdate)) {
+            tc.setUpdateByPrimaryKeyStatementEnabled(
+                    isTrue(enableUpdate));
         }
 
         if (stringHasValue(enableUpdateByPrimaryKey)) {

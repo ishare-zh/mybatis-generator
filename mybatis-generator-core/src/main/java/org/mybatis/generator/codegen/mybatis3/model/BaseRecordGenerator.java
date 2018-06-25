@@ -70,7 +70,7 @@ public class BaseRecordGenerator extends AbstractJavaGenerator {
 
         // 是否开启lombok注解
         if ("true".equalsIgnoreCase(this.context.getJavaModelGeneratorConfiguration().getProperty("enableLombok"))) {
-            topLevelClass.addAnnotation("Data");
+            topLevelClass.addAnnotation("@Data");
             topLevelClass.addImportedType("lombok.Data");
         }
 

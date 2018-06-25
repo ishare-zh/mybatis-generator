@@ -41,11 +41,17 @@ public class TableConfiguration extends PropertyHolder {
     /** The insert statement enabled. */
     private boolean insertStatementEnabled;
 
+    /** The insert statement enabled. */
+    private boolean insertStatementSelectiveEnabled;
+
     /** The select by primary key statement enabled. */
     private boolean selectByPrimaryKeyStatementEnabled;
 
     /** The select by example statement enabled. */
     private boolean selectByExampleStatementEnabled;
+
+    /** The update by primary key statement enabled. */
+    private boolean updateStatementEnabled;
 
     /** The update by primary key statement enabled. */
     private boolean updateByPrimaryKeyStatementEnabled;
@@ -125,8 +131,10 @@ public class TableConfiguration extends PropertyHolder {
         ignoredColumns = new HashMap<IgnoredColumn, Boolean>();
 
         insertStatementEnabled = true;
+        insertStatementSelectiveEnabled = true;
         selectByPrimaryKeyStatementEnabled = true;
         selectByExampleStatementEnabled = true;
+        updateStatementEnabled = true;
         updateByPrimaryKeyStatementEnabled = true;
         deleteByPrimaryKeyStatementEnabled = true;
         deleteByExampleStatementEnabled = true;
@@ -161,6 +169,22 @@ public class TableConfiguration extends PropertyHolder {
      */
     public boolean isInsertStatementEnabled() {
         return insertStatementEnabled;
+    }
+
+    public boolean isInsertStatementSelectiveEnabled() {
+        return insertStatementSelectiveEnabled;
+    }
+
+    public void setInsertStatementSelectiveEnabled(boolean insertStatementSelectiveEnabled) {
+        this.insertStatementSelectiveEnabled = insertStatementSelectiveEnabled;
+    }
+
+    public boolean isUpdateStatementEnabled() {
+        return updateStatementEnabled;
+    }
+
+    public void setUpdateStatementEnabled(boolean updateStatementEnabled) {
+        this.updateStatementEnabled = updateStatementEnabled;
     }
 
     /**

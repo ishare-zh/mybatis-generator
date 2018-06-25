@@ -203,8 +203,8 @@ public class InnerClass extends JavaElement {
         addFormattedJavadoc(sb, indentLevel);
         addFormattedAnnotations(sb, indentLevel);
 
-        //OutputUtilities.javaIndent(sb, indentLevel);
-        OutputUtilities.newLine(sb);
+        // OutputUtilities.javaIndent(sb, indentLevel);
+        // OutputUtilities.newLine(sb);
         sb.append(getVisibility().getValue());
 
         if (isAbstract()) {

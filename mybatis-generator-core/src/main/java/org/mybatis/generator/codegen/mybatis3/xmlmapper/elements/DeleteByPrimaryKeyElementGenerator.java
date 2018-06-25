@@ -16,7 +16,6 @@
 package org.mybatis.generator.codegen.mybatis3.xmlmapper.elements;
 
 import org.mybatis.generator.api.IntrospectedColumn;
-import org.mybatis.generator.api.dom.OutputUtilities;
 import org.mybatis.generator.api.dom.xml.Attribute;
 import org.mybatis.generator.api.dom.xml.TextElement;
 import org.mybatis.generator.api.dom.xml.XmlElement;
@@ -84,7 +83,6 @@ public class DeleteByPrimaryKeyElementGenerator extends
                     .getParameterClause(introspectedColumn));
             answer.addElement(new TextElement(sb.toString()));
         }
-        OutputUtilities.newLine(sb);
 
         if (context.getPlugins()
                 .sqlMapDeleteByPrimaryKeyElementGenerated(answer,
