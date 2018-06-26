@@ -149,6 +149,7 @@
   tableName CDATA #REQUIRED
   alias CDATA #IMPLIED
   domainObjectName CDATA #IMPLIED
+  targetFilename CDATA #IMPLIED
   enableInsert CDATA #IMPLIED
   enableInsertSelective CDATA #IMPLIED
   enableSelectByPrimaryKey CDATA #IMPLIED

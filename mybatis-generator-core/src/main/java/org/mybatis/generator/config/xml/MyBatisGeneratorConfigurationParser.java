@@ -222,6 +222,7 @@ public class MyBatisGeneratorConfigurationParser {
         String catalog = attributes.getProperty("catalog"); //$NON-NLS-1$
         String schema = attributes.getProperty("schema"); //$NON-NLS-1$
         String tableName = attributes.getProperty("tableName"); //$NON-NLS-1$
+        String targetFilename = attributes.getProperty("targetFilename");
         String domainObjectName = attributes.getProperty("domainObjectName"); //$NON-NLS-1$
         String alias = attributes.getProperty("alias"); //$NON-NLS-1$
         String enableInsert = attributes.getProperty("enableInsert"); //$NON-NLS-1$
@@ -263,6 +264,10 @@ public class MyBatisGeneratorConfigurationParser {
             tc.setTableName(tableName);
         }
 
+        if (stringHasValue(targetFilename)) {
+            tc.setTargetFilename(targetFilename);
+        }
+
         if (stringHasValue(domainObjectName)) {
             tc.setDomainObjectName(domainObjectName);
         }
@@ -290,7 +295,7 @@ public class MyBatisGeneratorConfigurationParser {
         }
 
         if (stringHasValue(enableUpdate)) {
-            tc.setUpdateByPrimaryKeyStatementEnabled(
+            tc.setUpdateStatementEnabled(
                     isTrue(enableUpdate));
         }
 

@@ -91,6 +91,8 @@ public class TableConfiguration extends PropertyHolder {
     
     /** The table name. */
     private String tableName;
+
+    private String targetFilename;
     
     /** The domain object name. */
     private String domainObjectName;
@@ -459,6 +461,14 @@ public class TableConfiguration extends PropertyHolder {
      */
     public String getAlias() {
         return alias;
+    }
+
+    public String getTargetFilename() {
+        return targetFilename;
+    }
+
+    public void setTargetFilename(String targetFilename) {
+        this.targetFilename = targetFilename;
     }
 
     /**

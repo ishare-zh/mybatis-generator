@@ -49,6 +49,8 @@ public class FullyQualifiedTable {
     /** The runtime table name. */
     private String runtimeTableName;
 
+    private String targetFilename;
+
     /** The domain object name. */
     private String domainObjectName;
     
@@ -110,7 +112,7 @@ public class FullyQualifiedTable {
             String domainObjectName, String alias,
             boolean ignoreQualifiersAtRuntime, String runtimeCatalog,
             String runtimeSchema, String runtimeTableName,
-            boolean delimitIdentifiers, Context context) {
+            boolean delimitIdentifiers, Context context, String targetFilename) {
         super();
         this.introspectedCatalog = introspectedCatalog;
         this.introspectedSchema = introspectedSchema;
@@ -140,6 +142,10 @@ public class FullyQualifiedTable {
                 .getBeginningDelimiter() : ""; //$NON-NLS-1$
         endingDelimiter = delimitIdentifiers ? context.getEndingDelimiter()
                 : ""; //$NON-NLS-1$
+
+        if (stringHasValue(targetFilename)) {
+            this.targetFilename = targetFilename;
+        }
     }
 
     /**
@@ -318,6 +324,14 @@ public class FullyQualifiedTable {
      */
     public String getAlias() {
         return alias;
+    }
+
+    public String getTargetFilename() {
+        return targetFilename;
+    }
+
+    public void setTargetFilename(String targetFilename) {
+        this.targetFilename = targetFilename;
     }
 
     /**
